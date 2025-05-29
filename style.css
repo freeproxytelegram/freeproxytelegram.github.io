@@ -1,0 +1,399 @@
+/* Reset و فونت */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Vazirmatn', sans-serif;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    line-height: 1.8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* هدر */
+header {
+    background: linear-gradient(135deg, #1e88e5, #0d47a1);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 4px solid #0a3d91;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 8s infinite linear;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.7rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+header p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+/* محتوا */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1;
+    width: 100%;
+}
+
+/* عناوین h2 با افکت ویژه */
+h2 {
+    color: #1e88e5;
+    margin: 2rem 0 1.5rem;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #1e88e5 20%, rgba(30, 136, 229, 0.2) 80%);
+    border-radius: 3px;
+}
+
+h2 i {
+    font-size: 1.4em;
+    color: #1e88e5;
+}
+
+/* لیست پروکسی‌ها */
+.proxy-list {
+    margin-bottom: 3rem;
+}
+
+.proxy-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.2rem;
+}
+
+.proxy-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
+}
+
+.proxy-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: #1e88e5;
+    transition: width 0.3s ease;
+}
+
+.proxy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.proxy-item:hover::before {
+    width: 8px;
+}
+
+.proxy-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.proxy-icon {
+    color: #1e88e5;
+    font-size: 1.8rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.proxy-name {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #f44336;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+/* دکمه‌ها */
+.connect-button, .vpn-button, .refresh-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.connect-button {
+    background-color: #1e88e5;
+    color: white;
+    min-width: 100px;
+}
+
+.vpn-button {
+    background-color: #4caf50;
+    color: white;
+    margin: 1.5rem auto;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.refresh-button {
+    background-color: #ff9800;
+    color: white;
+    margin-top: 1rem;
+}
+
+.connect-button:hover, .vpn-button:hover, .refresh-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.connect-button:active, .vpn-button:active, .refresh-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.connect-button.disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* افکت Ripple */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* بخش فیلترشکن */
+.vpn-section {
+    margin-bottom: 3rem;
+}
+
+.vpn-box {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.vpn-box p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.guide {
+    background-color: #f5f9ff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-right: 4px solid #1e88e5;
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.guide p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.guide a {
+    color: #1e88e5;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.guide a:hover {
+    color: #0d47a1;
+    text-decoration: underline;
+}
+
+/* وضعیت بارگذاری و خطا */
+.loading, .error {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    grid-column: 1 / -1;
+    border: 1px solid #e0e0e0;
+}
+
+.loading i {
+    font-size: 2rem;
+    color: #1e88e5;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.error {
+    color: #e53935;
+}
+
+.error i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #e53935;
+    display: block;
+}
+
+.error p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.error small {
+    font-size: 0.9rem;
+    color: #777;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+/* فوتر */
+footer {
+    text-align: center;
+    padding: 1.8rem;
+    background-color: #263238;
+    color: white;
+    margin-top: auto;
+    font-size: 0.95rem;
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.9rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .proxy-container {
+        grid-template-columns: 1fr;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin: 1.5rem 0 1.2rem;
+    }
+    
+    .vpn-box {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.7rem;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+    
+    .proxy-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .connect-button {
+        width: 100%;
+    }
+}
